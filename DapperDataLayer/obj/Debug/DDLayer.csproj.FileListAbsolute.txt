@@ -1,0 +1,6 @@
+C:\Users\daghankaban\documents\visual studio 2015\Projects\DapperT2\DapperDataLayer\bin\Debug\DapperDataLayer.dll
+C:\Users\daghankaban\documents\visual studio 2015\Projects\DapperT2\DapperDataLayer\bin\Debug\DapperDataLayer.pdb
+C:\Users\daghankaban\documents\visual studio 2015\Projects\DapperT2\DapperDataLayer\bin\Debug\Dapper.dll
+C:\Users\daghankaban\documents\visual studio 2015\Projects\DapperT2\DapperDataLayer\bin\Debug\Dapper.xml
+C:\Users\daghankaban\documents\visual studio 2015\Projects\DapperT2\DapperDataLayer\obj\Debug\DapperDataLayer.dll
+C:\Users\daghankaban\documents\visual studio 2015\Projects\DapperT2\DapperDataLayer\obj\Debug\DapperDataLayer.pdb
