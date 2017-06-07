@@ -20,7 +20,8 @@ Eğer veritabanından veri çekilecekse gerekli data classı ve o class'ın prop
   
  # Örnek Select Sorgusu
   
-  ``` _db.SelectQuery<dynamic>("UPDATE AT_ANASAYFAMETINLER SET BASLIK = 'Lorem İpsum17', EKLEYENISIM = 'bhg' where ID=7");
+  ``` 
+  _db.SelectQuery<dynamic>("UPDATE AT_ANASAYFAMETINLER SET BASLIK = 'Lorem İpsum17', EKLEYENISIM = 'bhg' where ID=7");
   _db.FlushParameter();   //bu noktada tekrar kullanılacağı için flush metodu kullanılıyor.
   ```
   
