@@ -1,4 +1,4 @@
-dapper_t2 dapper ile yapılacak işlemleri kısaltmak için yazılmış ufak bir kütüphanedir.(DapperT2 test için yazılmış basit bir MVC projesidir)
+dapper_t2 dapper ile yapılacak işlemleri kısaltmak için yazılmış ufak bir kütüphanedir.(DapperT2 klasörü test için yazılmış basit bir MVC projesi içermektedir.)
 
 Başlamadan önce -yok ise- dapper nuget'i yüklenmelidir
 
