@@ -6,12 +6,7 @@ dapper_t2 DapperDataLayer sınıf kütüphanesinden ibarettir. Beraberinde kulla
 
 ``` <add name="DapperDefault" connectionString="Data Source=**;Initial Catalog=**;User ID=**;Password=**" providerName="System.Data.SqlClient" /> ```
 
-DapperDefault ismi yerine herhangi başka bir tanımlayıcı isim kullanılmak istenirse DapperDataLayer/Access/Helper.cs sınıfından değiştirilebilir 
-
-``` 
- public static string connectionstring() { return ConfigurationManager.ConnectionStrings["VARSAYILAN_BAGLANTI_CUMLECIGI_ADI"].ConnectionString; }
-
-```
+DapperDefault ismi sabit değildir DapperDataLayer/Access/Helper.cs sınıfında değiştirilebilir. 
   
 Eğer veritabanından veri çekilecekse gerekli data classı ve o class'ın propertyleri doğru sekilde yaratılmalıdır. Veritabanındaki kolon ismi ile property ismi uyuşmalıdır. Bütün kolonlar için property yaratmak gerekmez.Ama yaratılan propertyler kolon isimleri ile uyuşmalıdır.
  
