@@ -2,7 +2,7 @@ dapper_t2 dapper ile yapılacak işlemleri kısaltmak için yazılmış ufak bir
 
 Başlamadan önce -yok ise- dapper nuget'i yüklenmelidir
 
-DapperT2 DapperDataLayer sınıf kütüphanesinden ibarettir. Beraberinde kullanılacağı projeye ayrı bir proje olarak eklenmesi yeterlidir. Helper Class'ı ile yanına eklendiği projenin web.config dosyasındaki bağlantı cümleciğini çekerek veritabanına bağlanır. Dolayısıyla yanına eklendiği projenin config dosyasına şu satırlar eklenmelidir.
+dapper_t2 DapperDataLayer sınıf kütüphanesinden ibarettir. Beraberinde kullanılacağı projeye ayrı bir proje olarak eklenmesi yeterlidir. Helper Class'ı ile yanına eklendiği projenin web.config dosyasındaki bağlantı cümleciğini çekerek veritabanına bağlanır. Dolayısıyla yanına eklendiği projenin config dosyasına şu satırlar eklenmelidir.
 
 ``` <add name="DapperDefault" connectionString="Data Source=**;Initial Catalog=**;User ID=**;Password=**" providerName="System.Data.SqlClient" /> ```
   
