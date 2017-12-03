@@ -1,6 +1,7 @@
 dapper_t2 dapper ile yapılacak işlemleri kısaltmak için yazılmış ufak bir kütüphanedir.(DapperT2 klasörü test için yazılmış basit bir MVC projesi içermektedir.)
 
 DapperT2=> Test için yazılmış basit bir MVC projesi içermektedir.
+
 DapperDataLayer=>Dapper ile etkileşime giren ve plugini oluşturan dosyalar buradadır.
 
 Başlamadan önce -yok ise- dapper nuget'i yüklenmelidir
