@@ -1,5 +1,8 @@
 dapper_t2 dapper ile yapılacak işlemleri kısaltmak için yazılmış ufak bir kütüphanedir.(DapperT2 klasörü test için yazılmış basit bir MVC projesi içermektedir.)
 
+DapperT2=> Test için yazılmış basit bir MVC projesi içermektedir.
+DapperDataLayer=>Dapper ile etkileşime giren ve plugini oluşturan dosyalar buradadır.
+
 Başlamadan önce -yok ise- dapper nuget'i yüklenmelidir
 
 dapper_t2 DapperDataLayer sınıf kütüphanesinden ibarettir. Beraberinde kullanılacağı projeye ayrı bir proje olarak eklenmesi yeterlidir. Helper Class'ı ile yanına eklendiği projenin web.config dosyasındaki bağlantı cümleciğini çekerek veritabanına bağlanır. Dolayısıyla yanına eklendiği projenin config dosyasına şu satırlar eklenmelidir.
