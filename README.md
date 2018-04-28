@@ -16,9 +16,13 @@ Eğer veritabanından veri çekilecekse gerekli data classı ve o class'ın prop
  
  Bu projede DDLayer/Core klasörü içinde AracModel sınıfı kullanılmıştır.
  
- Öncelikle kullanılacak yerde DB nesnesi yaratılır
- 
-``` DDLayer.Access.DB _db = new DDLayer.Access.DB(); ```
+ Öncelikle kullanılacak yerde DB nesnesi yaratılır. DB nesnesi yok edilebilir olduğu için using ile kullanılabilir
+ ```
+ using(DDLayer.Access.DB _db = new DDLayer.Access.DB())
+  {
+      //db kodları
+  } 
+ ``` 
   
   eğer _db nesnesi tekrar tekrar aynı yerde kullanılacaksa veritabanı işlemleri arasında
   ```_db.FlushParameter()``` 
