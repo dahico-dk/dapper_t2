@@ -12,64 +12,66 @@ using System.Data;
 
 namespace DapperT2.Controllers
 {
-    public class HomeController : Controller
-    {
-       
-        NonInterface non;
-        //private string connectionString = ConfigurationManager.ConnectionStrings["DapperDefault"].ConnectionString;
-        public ActionResult Index()
-        {           
-            DDLayer.Access.DB _db = new DDLayer.Access.DB();         
-            non = new NonInterface();
-            try
-            {
-                //Ornek queryler
-                //1. select sorgusu
-                //2. parametreli dönüş değersiz stored procedure(parametresizi de var)
-                //3. parametreli donus degerli stored procedure
-                //4. parametreli output degerli donus degerli stored procedure
+	public class HomeController : Controller
+	{
+	   
+		//NonInterface non;
+		//private string connectionString = ConfigurationManager.ConnectionStrings["DapperDefault"].ConnectionString;
+		public ActionResult Index()
+		{                      
+			//non = new NonInterface();
+			using (DDLayer.Access.DB _db = new DDLayer.Access.DB())
+			{
+				try
+				{
+					//Ornek queryler
+					//1. select sorgusu
+					//2. parametreli dönüş değersiz stored procedure(parametresizi de var)
+					//3. parametreli donus degerli stored procedure
+					//4. parametreli output degerli donus degerli stored procedure
 
-                //****!!!******* 1
-                _db.SelectQuery<dynamic>("UPDATE AT_ANASAYFAMETINLER SET BASLIK = 'Lorem İpsum17', EKLEYENISIM = 'hbr' where ID=7");//No 1
-                _db.FlushParameter();   
-                //****!!!******* 2                        
-                _db.AddParameter("@ID",221831);
-                _db.AddParameter("@ADET",0);
-                _db.AddParameter("@NOT","hb");            
-                _db.SelectSP("ap_Sepet_Guncelle_Web");//2. numaralı
-                _db.FlushParameter();
-                //****!!!*******3
-                _db.AddParameter("@MARKA", "ALFA ROMEO");
-                var list= _db.SelectSP<AracModel>("ap_AracModel");              
-                _db.FlushParameter();
-                //****!!!*******4
-                List<DDLayer.Access.Dparam> outputs = new List<DDLayer.Access.Dparam>();
-                _db.AddParameter("@CARIKOD", "M000");
-                _db.AddOutputParameter("@BORC", DbType.Double);
-                _db.AddOutputParameter("@ALACAK", DbType.Double);
-                var list2 = _db.SelectSP<CARILISTE>("ap_GetCariHareket",out outputs);               
-                outputs = outputs;
-            }
-            catch (Exception E)
-            {
-                E = E;
-                throw;
-            }
-                     
-            return View();
-        }
-         public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+					//****!!!******* 1
+					_db.SelectQuery<dynamic>("UPDATE AT_ANASAYFAMETINLER SET BASLIK = 'Lorem İpsum17', EKLEYENISIM = 'hbr' where ID=7");//No 1
+					_db.FlushParameter();
+					//****!!!******* 2                        
+					_db.AddParameter("@ID", 221831);
+					_db.AddParameter("@ADET", 0);
+					_db.AddParameter("@NOT", "hb");
+					_db.SelectSP("ap_Sepet_Guncelle_Web");//2. numaralı
+					_db.FlushParameter();
+					//****!!!*******3
+					_db.AddParameter("@MARKA", "ALFA ROMEO");
+					var list = _db.SelectSP<AracModel>("ap_AracModel");
+					_db.FlushParameter();
+					//****!!!*******4
+					List<DDLayer.Access.Dparam> outputs = new List<DDLayer.Access.Dparam>();
+					_db.AddParameter("@CARIKOD", "M000");
+					_db.AddOutputParameter("@BORC", DbType.Double);
+					_db.AddOutputParameter("@ALACAK", DbType.Double);
+					var list2 = _db.SelectSP<CARILISTE>("ap_GetCariHareket", out outputs);
+					//outputs dönüş değerleridir
+				}
+				catch (Exception E)
+				{
+					E = E;
+					throw;
+				}
+			}
+					 
+			return View();
+		}
+		 public ActionResult About()
+		{
+			ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
+			return View();
+		}
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+		public ActionResult Contact()
+		{
+			ViewBag.Message = "Your contact page.";
 
-            return View();
-        }
-    }
+			return View();
+		}
+	}
 }

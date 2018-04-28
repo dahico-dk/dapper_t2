@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace DDLayer.Access
 {
    
-    public class DB
+    public class DB:IDisposable
     {
         private List<Dparam> parametreler;
         private List<Dparam> outputparametreler;
@@ -199,5 +199,10 @@ namespace DDLayer.Access
             parametreler = new List<Dparam>();
             outputparametreler = new List<Dparam>();
         }
-    }
+
+		public void Dispose()
+		{			
+			GC.SuppressFinalize(this);
+		}
+	}
 }
