@@ -24,15 +24,17 @@ Eğer veritabanından veri çekilecekse gerekli data classı ve o class'ın prop
   } 
  ``` 
   
-  eğer _db nesnesi tekrar tekrar aynı yerde kullanılacaksa veritabanı işlemleri arasında
+  _db nesneleri son parametre olarak bool bir değer alabilirler. Eğer bu değer false ise sorguya ait parametre listesi boşaltılmayacaktır. Default değer true olduğu için herhangi bir parametre verilmezse parametreler sıfırlanacaktır. Manuel olarak bu değere false verilirse iki metod arasında mutlaka aşağıdaki metod kullanılmalıdır.
+  
   ```_db.FlushParameter()``` 
-  metodu kullanılmalıdır. Yoksa hata verecektir.
+  
+Yoksa hata verecektir.
   
  # Örnek Select Sorgusu
   
   ``` 
-  _db.SelectQuery<dynamic>("UPDATE AT_ANASAYFAMETINLER SET BASLIK = 'Lorem İpsum17', EKLEYENISIM = 'bhg' where ID=7");
-  _db.FlushParameter();   //bu noktada tekrar kullanılacağı için flush metodu kullanılıyor.
+  _db.SelectQuery<dynamic>("UPDATE AT_ANASAYFAMETINLER SET BASLIK = 'Lorem İpsum17', EKLEYENISIM = 'bhg' where ID=7",false); 
+  _db.FlushParameter()//sadece eğer parametre olarak manuel olarak false verildiyse gereklidir.
   ```
   
   # Örnek Parametre ile Stored Procedure (Update,Insert)
@@ -41,7 +43,6 @@ Eğer veritabanından veri çekilecekse gerekli data classı ve o class'ın prop
    _db.AddParameter("@ADET",0);    //Parametre
    _db.AddParameter("@NOT","Gene"); //Parametre           
    _db.SelectSP("ap_Sepet_Guncelle_Web"); //stored proc
-  _db.FlushParameter();
   ```
  # Örnek parametreli geriye tablo dönen Stored Procedure (Select)
  
@@ -50,7 +51,6 @@ Eğer veritabanından veri çekilecekse gerekli data classı ve o class'ın prop
   
    _db.AddParameter("@MARKA", "ALFA ROMEO");
    var list= _db.SelectSP<AracModel>("ap_AracModel");        //Geri AracModel tipinden liste dönecektir.      
-   _db.FlushParameter();
   ```
  # Output parametreli geriye tablo dönen Stored Procedure(Select)
  ```
