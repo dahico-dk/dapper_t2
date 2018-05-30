@@ -56,14 +56,14 @@ namespace DapperT2.Controllers
 					_db.AddParameter("@ID", 221831);
 					_db.AddParameter("@ADET", 0);
 					_db.AddParameter("@NOT", "hb");
-					_db.SelectSP("ap_Sepet_Guncelle_Web", true);//2. numaralı										
+					_db.SelectSP("ap_Sepet_Guncelle_Web");//2. numaralı										
 					_db.AddParameter("@MARKA", "ALFA ROMEO");
-					var list3 = _db.SelectSP<AracModel>("ap_AracModel", true);										
+					var list3 = _db.SelectSP<AracModel>("ap_AracModel");										
 					List<DDLayer.Access.Dparam> outputs2 = new List<DDLayer.Access.Dparam>();
 					_db.AddParameter("@CARIKOD", "M000");
 					_db.AddOutputParameter("@BORC", DbType.Double);
 					_db.AddOutputParameter("@ALACAK", DbType.Double);
-					var list4 = _db.SelectSP<CARILISTE>("ap_GetCariHareket", out outputs, true);
+					var list4 = _db.SelectSP<CARILISTE>("ap_GetCariHareket", out outputs);
 					//outputs2 dönüş değerleridir
 
 				}

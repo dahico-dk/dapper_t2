@@ -26,7 +26,7 @@ namespace DDLayer.Access
 		/// Generic metod oldugu için tiplerin baştan belirtilmesi gerekir.<para />
 		/// TEKRAR TEKRAR AYNI DB NESNESI KULLANILACAKSA ARALARINDA FLUSHPARAMETER() METODU KULLANILMALI <para />
 		/// </summary>
-		public List<T> SelectQuery<T>(string query,bool flush)
+		public List<T> SelectQuery<T>(string query,bool flush=true)
 		{
 			try
 			{
@@ -47,7 +47,7 @@ namespace DDLayer.Access
 		/// Generic metod oldugu için tiplerin baştan belirtilmesi gerekir.       <para />
 		/// TEKRAR TEKRAR AYNI DB NESNESI KULLANILACAKSA ARALARINDA FLUSHPARAMETER() METODU KULLANILMALI <para />
 		/// </summary>
-		public List<T> SelectSP<T>(string procadi,bool flush)
+		public List<T> SelectSP<T>(string procadi,bool flush=true)
 		{
 			try
 			{
@@ -85,7 +85,7 @@ namespace DDLayer.Access
 		/// outputs=> gerıye donen output parametreleri<para />
 		/// Ek-Not: Float==>Single ama Float değerleri doublela karsılamak gerekiyor nedense.<para />
 		/// </summary>
-		public List<T> SelectSP<T>(string procadi, out List<Dparam> outputs,bool flush)
+		public List<T> SelectSP<T>(string procadi, out List<Dparam> outputs,bool flush=true)
 		{
 			try
 			{
@@ -134,7 +134,7 @@ namespace DDLayer.Access
 		/// outputs=> gerıye donen output parametreleri<para />
 		/// Ek-Not: Float==>Single ama Float değerleri doublela karsılamak gerekiyor nedense.<para />
 		/// </summary>
-		public void SelectSP(string procadi, out List<Dparam> outputs,bool flush)
+		public void SelectSP(string procadi, out List<Dparam> outputs,bool flush=true)
 		{
 			try
 			{
@@ -175,7 +175,7 @@ namespace DDLayer.Access
 		/// outputs=> gerıye donen output parametreleri<para />
 		/// Ek-Not: Float==>Single ama Float değerleri doublela karsılamak gerekiyor nedense.<para />
 		/// </summary>
-		public void SelectSP(string procadi,bool flush)
+		public void SelectSP(string procadi,bool flush=true)
 		{
 			try
 			{
