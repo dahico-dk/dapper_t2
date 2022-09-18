@@ -1,3 +1,5 @@
+# DEPRECATED
+
 dapper_t2 is a tiny plugin written for shortening the dapper processes. (DapperT2 folder includes a simple MVC project written for testing.) 
 
 DapperT2=> includes a simple MVC project written for testing. 
